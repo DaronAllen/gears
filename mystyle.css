@@ -1,0 +1,85 @@
+/*body background css*/
+body{
+  padding: 0;
+  margin:0;
+  background: #8af3f9;
+  background-size:cover;
+}
+
+.rotate_01{
+  display: block;
+  position: fixed;
+  top: 50%
+  left:50%
+  width:150px;
+  height:150px;
+  margin-left: -60px 0 0 -280px;
+  -webkit-transition: -webkit-transform 1s;
+}
+.rotate_01:hover{
+  -webkit-transform:rotate(360deg) translateZ(0);
+
+}
+
+
+.parent{
+  display: flex;
+  height: 500px;
+}
+
+.gear{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  background: #fff;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 4s;
+  animation-play-state: running;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.gear .center{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  background: #8af3f9;
+  border-radius: 50%;
+
+
+}
+
+.tooth{
+  position: absolute;
+  top: -25px;
+  left: 75px;
+  z-index: 1;
+  width: 45px;
+  height: 250px;
+  background:#fff;
+}
+
+.tooth:nth-child(2){
+  transform: rotate(45deg);
+}
+
+.tooth:nth-child(3){
+  transform: rotate(90deg);
+}
+
+.tooth:nth-child(4){
+  transform: rotate(135deg);
+}
+
+@keyframes spin {
+  from {transform: rotate(0deg); }
+  to {transform: rotate(360deg);}
+}
+.gear:hover {
+  animation-play-state: running;
+}
